@@ -53,7 +53,7 @@ node(label: 'Mobile Builder 2') {
         stage('seed database') {
           // Restart postgres to avoid "PG::ObjectInUse: ERROR:  database "workable_development" is being accessed by other users"
           sh (script: "kill -9 \$(ps aux | grep Postgres/var-9.6 | grep -v 'grep '' | awk '{print \$2}')")
-          sh (script: "postgres -D /Users/angelos/Library/Application\ Support/Postgres/var-9.6 -p 5432 &")
+          sh (script: "postgres -D /Users/angelos/Library/Application\\ Support/Postgres/var-9.6 -p 5432 &")
           sh (script: "sleep 2")
           sh (script: "QUICK=true rake db:reseed && BYPASS_MOBILE_GENERATOR_DATA=yes rake qa:generate_mobile_data")
         }
