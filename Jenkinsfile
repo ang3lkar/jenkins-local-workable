@@ -83,7 +83,7 @@ node(label: 'Mobile Builder 2') {
           }
           break;
         default:
-          // do nothing
+          echo "success"
       }
     }
   }
